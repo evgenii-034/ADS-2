@@ -4,23 +4,21 @@
 
 
 double pown(double value, uint16_t n) {
-if (n == 0) {
-return 1;
-} else if (n == 1) {
-return value;
-} else if (n % 2 == 0) {
-return pown(value * value, n / 2);
-} else {
-return pown(value * value, n / 2) * value;
-}
+ if (n == 0) { return 1.; }
+    if (n == 1) { return value; }
+    double x = value;
+    for (uint64_t i = 1; i < n; i++) {
+        value *= x;
+    }
+    return value;
 }
 
 uint64_t fact(uint16_t n) {
-if (n <= 1) {
-return 1;
-} else {
-return n * fact(n - 1);
-}
+uint64_t ans = 1;
+    for (uint64_t i = 2; i <= n; i++) {
+        ans *= i;
+    }
+    return ans;
 }
 
 double calcItem(double x, uint16_t n) {
