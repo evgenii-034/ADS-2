@@ -4,11 +4,11 @@
 
 
 double pown(double value, uint16_t n) {
-if (n == 0) { 
-return 1.; 
+if (n == 0) {
+return 1.;
 }
-if (n == 1) { 
-return value; 
+if (n == 1) {
+return value;
 }
 double x = value;
 for (uint64_t i = 1; i < n; i++) {
@@ -25,8 +25,8 @@ return n * fact(n - 1);
 }
 }
 double calcItem(double x, uint16_t n) {
-if (n == 0 || x == 0) { 
-return 0; 
+if (n == 0 || x == 0) {
+return 0;
 }
 return pown(x, n) / fact(n);
 }
